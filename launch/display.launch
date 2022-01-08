@@ -1,0 +1,25 @@
+<launch>
+
+  <arg name="gui" default="false" />
+  <arg name="js_pub_rate" default="50" />
+  <arg name="tf_pub_rate" default="15" />
+  <arg name="rvizconfig" default="$(find arm_mpc)/rviz/rvizconfig.rviz" />
+  
+  <param name="robot_description" textfile="$(find arm_mpc)/urdf/2link_robot.urdf" />
+  <param name="use_gui" value="$(arg gui)"/>
+
+  <node name="controller_node" pkg="arm_mpc" type="controller.py" unless="$(arg gui)">
+  	<param name="controller_pub_rate" value="$(arg js_pub_rate)" />
+  </node>
+
+  <node if="$(arg gui)" name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <node name="tf_endEffector_node" pkg="arm_mpc" type="tf_endEffector.py">
+  	<param name="tf_ee_pub_rate" value="$(arg tf_pub_rate)" />
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+
+</launch>
