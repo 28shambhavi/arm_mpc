@@ -20,12 +20,15 @@ $ catkin_make
 
 1. Arm model used can be changed by modifying the urdf in `urdf/2linkrobot.urdf`. It is defined as base>arm1>arm2>endEff.
 
-2. cd into the launch folder. Launch the desired controller in the rviz environment. 
+2. Navigate into the launch folder. Launch the desired controller in the rviz environment. 
   ```
+  $ roscd arm_mpc/launch
   $ roslaunch control_display.launch
   ```
-![simulation](https://i.imgur.com/MuA3Npi.gif)
 
+3. The launch file named `display.launch` launches the forward kinematics controller from `scripts/controller.py` for any point in the arm's workspace. The second launch file, `control_display.launch` will launch the MPC controller from `scripts/controller_mpc.py` and show the path from an initial point (both angles making zero degrees to the x axis) to the desired location of the end effector.
+
+<img src="https://i.imgur.com/MuA3Npi.gif" width="600"/>
 
 #### Built with
 1. Python3
