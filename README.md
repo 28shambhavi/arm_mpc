@@ -26,7 +26,7 @@ $ catkin_make
   $ roslaunch control_display.launch
   ```
 
-3. The launch file named `display.launch` launches the forward kinematics controller from `scripts/controller.py` for any point in the arm's workspace. The second launch file, `control_display.launch` will launch the MPC controller from `scripts/controller_mpc.py` and show the path from an initial point (both angles making zero degrees to the x axis) to the desired location of the end effector.
+3. Using the controllers: The launch file named `display.launch` launches the forward kinematics controller from `scripts/controller.py` for any point in the arm's workspace. The second launch file, `control_display.launch` will launch the MPC controller from `scripts/controller_mpc.py` and show the path from an initial point (both angles making zero degrees to the x axis) to the desired location of the end effector.
 
 <img src="https://i.imgur.com/MuA3Npi.gif" width="600"/>
 
@@ -35,7 +35,9 @@ $ catkin_make
 2. ROS Noetic
 
 #### References: 
-
 1. [Murray, Richard; A Mathematical Introduction to Robotic Manipulation](http://www.cds.caltech.edu/~murray/mlswiki/index.php/Main_Page "Reference")
 2. David I, Robles G. PID Control Dynamics of A Robotics Arm Manipulator with Two Degrees of Freedom.Control De Procesos y Robótica. 2012, pp. 1–7.
 3. Guechi E-H, Bouzoualegh S, Zennir Y, Blažič S. MPC Control and LQ Optimal Control of A Two-Link Robot Arm: A Comparative Study. Machines. 2018; 6(3):37. https://doi.org/10.3390/machines6030037
+
+#### Authors
+Shambhavi Singh ( [GitHub](https://github.com/28shambhavi), [Website](https://singh-shambhavi.github.io) )
