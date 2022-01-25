@@ -24,7 +24,7 @@ $ catkin_make
   ```
   $ roslaunch control_display.launch
   ```
-![Alt Text](https://imgur.com/MuA3Npi)
+![simulation](https://i.imgur.com/MuA3Npi.gif)
 
 
 #### Built with
